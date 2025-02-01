@@ -24,22 +24,16 @@ public class AddDigits {
 	 */
 
 	public int addSum(int n) {
+
 		while(n>9) {
-			int sum = 0;
-			sum += sum(n, sum);
-			n=sum;
+			int sum=n%10;
+			n/=10;
+			n=n+sum;
 		}
 		return n;
 	}
 
-	int sum(int n, int sum) {
-		while(n>0) {
-			sum+=n%10;
-			n/=10;
-		}
-		return sum;
-	}
-
+	
 	@Test
 	public void positiveInput() {
 		int actual = addSum(38);
